@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": " mocha ./test/**/*.test.js --timeout=2000000"
+    "test": " mocha ./test/**/*.test.js --timeout=2000000 --reporter mochawesome"
   },
   "keywords": [],
   "author": "",
@@ -13,5 +13,8 @@
     "chai": "^5.2.0",
     "mocha": "^11.7.1",
     "supertest": "^7.1.1"
+  },
+  "dependencies": {
+    "mochawesome": "^7.1.3"
   }
 }
