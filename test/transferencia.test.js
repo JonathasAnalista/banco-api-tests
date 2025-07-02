@@ -5,10 +5,16 @@ const { obterToken } = require('../helpers/autenticacao')
 
 describe('Transferências', () => {
     describe('POST /transferencias', () => {
+
+        let token
+       
+        beforeEach(async () => { // usando o beforeEach dentro do describe para nao precisar ficar declaro o token em todos os testes
+            token = await obterToken('julio.lima', '123456')  // aqui de fato está  pegando apenas o token do login que foi criando na função obterToken dentro do arquivo autenticacao.js e passando o usuario e senha
+
+        })
+
         it('Deve retornar sucesso com 201 quando o valor de transferência for igual ou acima de R$ 10,00', async () => {
            
-           const token = await obterToken('julio.lima', '123456')  // aqui de fato está  pegando apenas o token do login que foi criando na função obterToken dentro do arquivo autenticacao.js e passando o usuario e senha
-
            const resposta = await request(process.env.BASE_URL) // chama a api através da url dela 
                 .post('/transferencias') // chama o metodo pra ser testado 
                 .set('content-Type', 'application/json') //chamando o tipo de paramêtro
@@ -23,8 +29,6 @@ describe('Transferências', () => {
         })
 
         it('Deve retornar falha com 422 quando o valor de transferência for abaixo de R$ 10,00', async () => {
-            
-           const token = await obterToken('julio.lima', '123456')
 
            const resposta = await request('http://localhost:3000') // chama a api através da url dela 
                 .post('/transferencias') // chama o metodo pra ser testado 
