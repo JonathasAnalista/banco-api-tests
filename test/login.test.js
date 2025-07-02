@@ -1,10 +1,11 @@
 const request = require ('supertest'); //chamando o supertest
 const { expect } = require('chai') 
+require('dotenv').config()
 
 describe('Login', () => {  // Agrupamento de testes relacionado ao LOGIN
     describe('POST /login', () => {   // Subagrupamento é um describe dentro do outro todos os teste dentro desse describe estão relacionados ao POST/login
         it('Deve retornar 200  com um token em string', async () => { // O it é o test que vai ser executado recebendo dois parâmetros primeiro o nome do teste e segundo uma função que vai ser os comandos do teste
-           const resposta = await request('http://localhost:3000') // chamando o request do supertest e buscando o  servidor da API http://localhost:3000/
+           const resposta = await request(process.env.BASE_URL) // chamando o request do supertest e buscando o  servidor da API http://localhost:3000/
              .post('/login')
              .set('content-type', 'application/json')
              .send({
