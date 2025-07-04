@@ -1,24 +1,16 @@
-# 🧪 banco-api-tests
+#banco-api-tests
+##Objetivo
+Este projeto realiza testes automatizados na API REST do banco-api, validando suas funcionalidades e contribuindo a qualidade de suas operações.
 
-## 🎯 Objetivo
+##Stack utilizada
+Linguagem: JavaScript (Node.js)
+Framework de testes: Mocha
+Biblioteca de requisições HTTP: Supertest
+Biblioteca de asserções: Chai
+Relatórios de testes: Mochawesome
+Gerenciamento de variáveis de ambiente: dotenv
 
-Este projeto realiza **testes automatizados** na API REST do repositório [`banco-api`](https://github.com/juliodelimas/banco-api), validando suas funcionalidades e contribuindo com a qualidade das operações.
-
----
-
-## 🚀 Stack Utilizada
-
-- **Linguagem:** JavaScript (Node.js)
-- **Framework de testes:** [Mocha](https://mochajs.org/)
-- **Requisições HTTP:** [Supertest](https://github.com/visionmedia/supertest)
-- **Asserções:** [Chai](https://www.chaijs.com/)
-- **Relatórios:** [Mochawesome](https://github.com/adamgruber/mochawesome)
-- **Variáveis de ambiente:** [dotenv](https://github.com/motdotla/dotenv)
-
----
-
-## 📁 Estrutura de Diretórios
-
+##Estrutura de diretórios
 banco-api-tests/
 ├── test/               # Testes organizados por funcionalidades
 │   ├── login.test.js
@@ -34,8 +26,8 @@ Antes de rodar os testes, crie um arquivo chamado .env na raiz do projeto com o 
 BASE_URL=http://localhost:3000
 Substitua http://localhost:3000 pela URL onde a API banco-api está rodando.
 
-Comandos para execução
-Instale as dependências:
+##Comandos para execução
+###Instale as dependências:
 
 npm install
 Execute todos os testes:
